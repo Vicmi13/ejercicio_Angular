@@ -1,3 +1,4 @@
+import { Empleado } from './empleado';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,6 +9,31 @@ import { Component, OnInit } from '@angular/core';
 export class EmpleadosComponent  {
 
 
-  public titulo = 'Titulo del componente empleado'
+  public titulo = 'Componente Empleados'
+  public empleado:Empleado;
+  public trabajadores:Array <Empleado>;
+  public trabajador_externo: boolean;
+  public color: string;
+
+  constructor(){
+     this.empleado = new Empleado('Vicman Empleado', 24, 'Developer', true);
+     this.trabajadores = [
+        new Empleado('Victor T. Trabajador', 49, 'Software Enginner', true),
+        new Empleado('Kalei Ojeda', 32, 'Ventas', true),
+        new Empleado('Miguel Juarez', 35, 'Doctor', false)
+     ];
+     this.trabajador_externo = true;
+     this.color = "red";
+
+
+  }
+
+  ngOnInit(){
+    console.log(this.empleado);
+  }
+
+  cambiarExterno(valor){
+     this.trabajador_externo = valor
+  }
 
 }

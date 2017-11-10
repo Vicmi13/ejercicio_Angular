@@ -1,3 +1,63 @@
-<h1>
+<h3>
   {{titulo}}
-</h1>
+</h3>
+
+<strong>Empleado estrella: </strong><br/><br/>
+
+<div *ngIf="trabajador_externo == true">
+    <button (click) = "cambiarExterno(false)"> Mostrar empleado </button>
+    <ul >
+      <li> {{trabajadores[0].nombre}}</li>
+      <li> {{trabajadores[0].edad}}</li>
+      <li> {{trabajadores[0].profesion}}</li>
+      <li *ngIf="trabajadores[0].contratado == true"> Esta contratado</li>  
+      <li *ngIf="trabajadores[0].contratado == false"> NO esta contratado</li>  
+    </ul>    
+</div>
+
+<div *ngIf="trabajador_externo == false">
+  <button (click) = "cambiarExterno(true)"> Mostrar trabajador </button>
+  <ul >
+    <li> {{empleado.nombre}}</li>
+    <li> {{empleado.edad}}</li>
+    <li> {{empleado.profesion}}</li>
+    <li *ngIf="empleado.contratado == true"> Esta contratado</li>    
+    <li *ngIf="empleado.contratado == false"> NO esta contratado</li>    
+  </ul>      
+</div>
+<hr/>
+
+<h3>Listado de empleados</h3>
+<ul>
+  <li *ngFor="let empleado of trabajadores; let i = index">
+   <strong>Empleado {{i +1}}:</strong> 
+      <ul>
+        <li> {{empleado.nombre}}</li>
+        <li> {{empleado.edad}}</li>
+        <li> {{empleado.profesion}}</li>
+        <li *ngIf="empleado.contratado == true"> Esta contratado</li>    
+        <li *ngIf="empleado.contratado == false"> NO esta contratado</li>
+      </ul>
+  </li>  
+</ul>
+
+<hr/>
+
+<h3>Colores switch</h3>
+  <ul [ngSwitch]="color"><!--Significa que va a trabajar con el binding -->
+    <li *ngSwitchCase="'red'" [ngStyle]= "{
+      background: color,
+       color: 'white'
+       }">
+          Es de color rojo
+    </li>
+  </ul>
+
+
+
+<!-- 
+  *ngIf =""     ->Directivas de condicionales y estructuras de control
+  *(click)=""   ->Directivas de tipo evento; con PARENTESIS ()
+  [ngSwitch]="" ->Directivas de tipo binding; con CORCHETES []
+
+-->
