@@ -14,6 +14,7 @@ export class EmpleadosComponent  {
   public trabajadores:Array <Empleado>;
   public trabajador_externo: boolean;
   public color: string;
+  public colorSeleccionado: string;
 
   constructor(){
      this.empleado = new Empleado('Vicman Empleado', 24, 'Developer', true);
@@ -24,6 +25,7 @@ export class EmpleadosComponent  {
      ];
      this.trabajador_externo = true;
      this.color = "red";
+     this.colorSeleccionado="#ccc";
 
 
   }
@@ -34,6 +36,10 @@ export class EmpleadosComponent  {
 
   cambiarExterno(valor){
      this.trabajador_externo = valor
+  }
+
+  logColorSeleccionado(){
+    console.log("color seleccionado: " + this.colorSeleccionado );
   }
 
 }

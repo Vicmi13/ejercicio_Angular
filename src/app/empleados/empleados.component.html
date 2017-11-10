@@ -43,21 +43,65 @@
 
 <hr/>
 
+<h3>Selector de colores</h3>
+<button (click)="logColorSeleccionado()"> Color seleccionado</button>
+<input type="text" [(ngModel)]="colorSeleccionado" />
+    <pre
+       [style.border]="colorSeleccionado == 'red' ? '5px solid black' : '1px solid white'"
+       [ngClass]="{
+            fondoAzul: colorSeleccionado == 'blue',
+            fondoVerde: colorSeleccionado == 'green',
+            letraGrande: 1 == 1
+       }">
+
+       <!--  [ngClass]="{'fondoAzul', 'letraGrande'  }" En este caso no no se pueden hacer validaciones ya esta predefinido  -->
+       <!-- [class.fondoAzul]="colorSeleccionado == 'blue'" > -->
+      <strong>Color elegido: </strong> {{colorSeleccionado}}
+    </pre>
+
+<div [ngStyle]= "{
+    'background': colorSeleccionado,
+    'width': '200px',
+    'height': '200px',
+    'margin-right':'69%',
+    'float': 'right'
+    }"> </div>
+
+ <div style="clear:both"></div>       
+
+<hr/>
 <h3>Colores switch</h3>
-  <ul [ngSwitch]="color"><!--Significa que va a trabajar con el binding -->
+  <ul [ngSwitch]="color">
     <li *ngSwitchCase="'red'" [ngStyle]= "{
-      background: color,
-       color: 'white'
+      'background': color,
+       'color': 'white',
+       'padding': '20px'
        }">
           Es de color rojo
     </li>
+
+    <li *ngSwitchCase="'green'" [ngStyle]= "{
+      background: color,
+       color: 'white',
+       padding: '20px'
+       }">
+          Es de color verde
+    </li>
+
   </ul>
 
 
 
 <!-- 
-  *ngIf =""     ->Directivas de condicionales y estructuras de control
-  *(click)=""   ->Directivas de tipo evento; con PARENTESIS ()
-  [ngSwitch]="" ->Directivas de tipo binding; con CORCHETES []
+  *ngIf =""                     ->Directivas de condicionales y estructuras de control
+  *(click)=""                   ->Directivas de tipo evento; con PARENTESIS ()
+  [ngSwitch]=""                 ->Directivas de tipo binding; con CORCHETES []
+  [(colorSeleccionado)]= ""     ->Directiva two-way data binding
 
+  [style.nombre_atributo] = ""              ->ngStyle en Atributo
+  [class.nombre_clase || otroElemento] = "" ->ngClass en Atributo
+
+  [ngClass]=""                              ->Nos permite meter un json con muchas mas condiciones
+
+  binding                       ->Unir un atributo a un  elemento HTML; poner un estilo, clase, atributo lo que sea
 -->

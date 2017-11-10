@@ -5,11 +5,19 @@
       Welcome to {{ title }}!
     </h1> 
 </div>   
- <hr/>  
+ <hr/>
+ <!-- rotuer-link permite la configuración  a los diferentes rutas y permite la navegación -->
+ <nav>
+   <a [routerLink]="['/pagina-principal']">Home</a> -
+   <a [routerLink]="['/fruta']">Frutas</a> -
+   <a [routerLink]= "['/empleado']">Empleado</a> -
+   <a [routerLink]="['/contacto']">Contacto</a> -
+ </nav>
 
 <!-- <app-fruta></app-fruta> -->
-<app-empleados></app-empleados>
+<!-- <app-empleados></app-empleados> -->
 
+<router-outlet></router-outlet> <!-- Con este tag se carga el path correspondiente al router-->
 
 
 
