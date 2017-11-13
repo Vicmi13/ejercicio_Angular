@@ -6,6 +6,7 @@ import {EmpleadosComponent} from './empleados/empleados.component';
 import {FrutaComponent} from './fruta/fruta.component';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { CocheComponent} from './coche/coche.component';
 
 
 const appRoutes: Routes = [
@@ -13,8 +14,10 @@ const appRoutes: Routes = [
     {path:'empleado', component:EmpleadosComponent},
     {path:'fruta', component:FrutaComponent},
     {path:'pagina-principal', component:HomeComponent},
-    {path:'cotacto', component:ContactoComponent},
-    {path:'**', component:HomeComponent}
+    {path:'contacto', component:ContactoComponent},
+    {path:'contacto/:page', component:ContactoComponent},
+    {path:'coche/', component:ContactoComponent},
+    {path:'**', component:CocheComponent}
 ];
 
 

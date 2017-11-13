@@ -6,13 +6,16 @@
     </h1> 
 </div>   
  <hr/>
- <!-- rotuer-link permite la configuración  a los diferentes rutas y permite la navegación -->
+ <!-- [routerLink]  es una directiva de atributos. Permite la configuración  a los diferentes rutas y permite la navegación -->
  <nav>
-   <a [routerLink]="['/pagina-principal']">Home</a> -
-   <a [routerLink]="['/fruta']">Frutas</a> -
-   <a [routerLink]= "['/empleado']">Empleado</a> -
-   <a [routerLink]="['/contacto']">Contacto</a> -
+   <a [routerLink]="['/pagina-principal']" [routerLinkActive]="['activado']">Home</a> - 
+   <a [routerLink]="['/fruta']" [routerLinkActive]="['activado']">Frutas</a> -
+   <a [routerLink]= "['/empleado']" [routerLinkActive]="['activado']">Empleado</a> -
+   <a [routerLink]="['/contacto']" [routerLinkActive]="['activado']">Contacto</a> -
+   <a [routerLink]="['/coche']" [routerLinkActive]="['activado']">Coche</a> -
+
  </nav>
+ <hr/>
 
 <!-- <app-fruta></app-fruta> -->
 <!-- <app-empleados></app-empleados> -->
