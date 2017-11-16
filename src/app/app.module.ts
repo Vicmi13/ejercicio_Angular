@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import {ConversorPipe} from './pipes/conversor.pipe';
 import { CocheComponent } from './coche/coche.component';
+import { PlantillasComponent } from './plantillas/plantillas.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CocheComponent } from './coche/coche.component';
     HomeComponent,
     ContactoComponent,
     ConversorPipe,
-    CocheComponent
+    CocheComponent,
+    PlantillasComponent,
   ],
   imports: [
     BrowserModule,
