@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     {path:'pagina-principal', component:HomeComponent},
     {path:'contacto', component:ContactoComponent},
     {path:'contacto/:page', component:ContactoComponent},
-    {path:'coche', component:ContactoComponent},
+    {path:'coche', component:CocheComponent},
     {path:'plantillas', component:PlantillasComponent},
     {path:'**', component:CocheComponent}
 ];
